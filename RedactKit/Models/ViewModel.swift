@@ -16,19 +16,4 @@ class ViewModel: ObservableObject {
     @Published var finishedCopiedInjected: Bool = false
     
     @Published var showHistory: Bool = true
-    
-    func reset() {
-        withAnimation(.none) {
-            startAnalysing = false
-            finishedAnalysing = false
-            finishedCopied = false
-            finishedPasting = false
-            finishedInjecting = false
-        }
-        
-        withAnimation {
-            finishedCopiedInjected = false   
-            showHistory = true
-        }
-    }
 }

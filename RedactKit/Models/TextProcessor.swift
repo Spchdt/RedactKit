@@ -25,13 +25,10 @@ class TextProcessor: ObservableObject {
     
     @Published var currentReplacements: [(String, String)] = []
 
-    
-    // Helper function to swap key-value pairs in the dictionary
     private func swapReplacements(_ replacements: [(String, String)]) -> [(String, String)] {
         return replacements.map { ($0.1, $0.0) }
     }
     
-    // Updated public functions with text target parameter
     func changeAttributedText(on target: TextTarget = .original, completion: @escaping () -> Void) {
         let occurrences = findAllOccurrences(replacements: currentReplacements, in: target)
         executeReplacementsInOrder(occurrences: occurrences, on: target, completion: completion)
@@ -43,7 +40,6 @@ class TextProcessor: ObservableObject {
         executeReplacementsInOrder(occurrences: occurrences, on: target, completion: completion)
     }
     
-    // Helper to get the correct text binding
     private func getTextBinding(for target: TextTarget) -> Binding<AttributedString> {
         switch target {
         case .original:
@@ -59,7 +55,6 @@ class TextProcessor: ObservableObject {
         }
     }
     
-    // Helper to get the text value
     private func getText(for target: TextTarget) -> AttributedString {
         switch target {
         case .original:
@@ -69,7 +64,6 @@ class TextProcessor: ObservableObject {
         }
     }
     
-    // Helper to set the text value
     private func setText(_ text: AttributedString, for target: TextTarget) {
         switch target {
         case .original:
@@ -80,12 +74,10 @@ class TextProcessor: ObservableObject {
     }
     
     private func executeReplacementsInOrder(occurrences: [TextOccurrence], on target: TextTarget, completion: @escaping () -> Void) {
-        // Step 1: Color all target words immediately
         colorAllTargetWords(occurrences: occurrences, on: target)
         
         let group = DispatchGroup()
         
-        // Step 2: Replace one by one with delay
         for (index, occurrence) in occurrences.enumerated() {
             group.enter() // Enter the group for each task
             
@@ -100,11 +92,10 @@ class TextProcessor: ObservableObject {
                         self.setText(currentText, for: target)
                     }
                 }
-                group.leave() // Leave the group when task completes
+                group.leave()
             }
         }
         
-        // Call completion when ALL tasks are done
         group.notify(queue: .main) {
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
                 completion()
@@ -129,7 +120,6 @@ class TextProcessor: ObservableObject {
                         currentText[attributedRange].foregroundColor = .white
                     }
                     
-                    // Move past this occurrence
                     searchStartIndex = stringRange.upperBound
                 }
             }
@@ -157,7 +147,6 @@ class TextProcessor: ObservableObject {
         return occurrences.sorted { $0.position < $1.position }
     }
     
-    // Function to update the replacements dictionary dynamically
     func updateReplacements(_ newReplacements: [(String, String)]) {
         currentReplacements = newReplacements
     }

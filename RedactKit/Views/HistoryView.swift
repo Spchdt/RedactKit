@@ -5,7 +5,6 @@
 //  Created by Supachod Trakansirorut on 30/8/25.
 //
 
-
 import SwiftUI
 import SwiftData
 
@@ -100,7 +99,6 @@ struct ContentCardView: View {
 }
 
 
-// Preview
 #Preview {
     ContentView()
         .modelContainer(for: Content.self, inMemory: true)
