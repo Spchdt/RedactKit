@@ -12,7 +12,7 @@
 
 </div>
 
-> ## ML Model Repository
+> ## RedactKit On-device Model
 > The machine learning model for this project is available at: https://github.com/oadultradeepfield/redactkit-on-device-model
 
 
