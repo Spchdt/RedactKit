@@ -26,7 +26,6 @@ RedactKit is an intelligent text processing application that automatically detec
 - **📚 History Management**: Persistent storage of processed content using SwiftData
 - **🔄 Animated Redaction**: Smooth animations showing the redaction process
 - **📋 Clipboard Integration**: Easy copy/paste functionality
-- **🛡️ Content Verification**: Built-in security features for sensitive data handling
 
 ## 🔍 Supported PII Types
 
@@ -93,9 +92,3 @@ RedactKit emphasizes:
 - **Performance**: Optimized ML inference for real-time processing
 - **Security**: Safe handling of sensitive information
 - **Accessibility**: Clean, readable design with clear visual feedback
-
-<div align="center">
-  <strong>Built with ❤️ using SwiftUI and CoreML</strong>
-  <br>
-  <sub>Created by <a href="https://github.com/Spchdt">Supachod Trakansirorut</a></sub>
-</div>
