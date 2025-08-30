@@ -84,8 +84,6 @@ RedactKit can detect and redact the following types of sensitive information:
 The project includes:
 - CoreML model (`PIIDetectionModel.mlpackage`)
 - NeuroBERT-Mini tokenizer
-- Custom UI components and animations
-
 
 ## 🎨 Design Philosophy
 
