@@ -11,6 +11,7 @@ import SwiftData
 @main
 struct RedactKitApp: App {
     @StateObject private var vm = ViewModel()
+    @StateObject private var tp = TextProcessor()
 
     var body: some Scene {
         WindowGroup {
@@ -18,6 +19,7 @@ struct RedactKitApp: App {
                 .preferredColorScheme(.light)
                 .modelContainer(for: Content.self)
                 .environmentObject(vm)
+                .environmentObject(tp)
         }
     }
 }
