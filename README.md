@@ -1,5 +1,3 @@
-# RedactKit 🔒
-
 <div align="center">
   
 ![RedactKit Logo](RedactKit/Assets.xcassets/redactKitLogo.imageset/Frame%202.png)
