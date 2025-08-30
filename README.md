@@ -14,6 +14,10 @@
 
 </div>
 
+> ## ML Model Repository
+> The machine learning model for this project is available at: https://github.com/oadultradeepfield/redactkit-on-device-model
+
+
 ## 🚀 Overview
 
 RedactKit is an intelligent text processing application that automatically detects and redacts Personally Identifiable Information (PII) from text content. Using advanced machine learning models and Natural Language Processing, it identifies sensitive information like emails, phone numbers, addresses, SSNs, credit card numbers, and more.
